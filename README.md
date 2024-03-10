@@ -1,0 +1,2 @@
+# VariousBashProjects
+Uniwersity course
