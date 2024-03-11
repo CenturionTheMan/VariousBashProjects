@@ -17,21 +17,11 @@
 #
 
 #
-# Zadanie 6.
-# Odnaleźć w katalogu `bbb` plik, którego zawartość pokrywa się z zawartością
-# pliku `bardzo tajna treść` (jest on w katalogu `ddd`) i skopiować znaleziony
-# plik do katalogu `ddd`, jeśli jeszcze go tam nie ma.
+# Zadanie 7.
+# Wyszukać w katalogu `bbb` i jego podkatalogach wszystkie pliki zwyczajne
+# (nie katalogi!), które są w systemie plików oznaczone jako wykonywalne.
+# Utworzyć w katalogu `ddd` plik `ostrzeżenie`, w którym pojawi się informacja
+# "Uważaj na te pliki:" oraz lista znalezionych plików (każdy w nowej linii).
 #
 
-baseText=$(cat ddd/'bardzo tajna treść')
 
-for file in $(find bbb/ -type f); do
-    text=$(cat ${file})
-    
-    if [ "${text}" = "${baseText}" ]; then
-        echo "Found file: ${file}"
-        cp -n ${file} ddd/
-        break
-    fi
-
-done

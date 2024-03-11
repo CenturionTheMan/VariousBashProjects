@@ -27,11 +27,6 @@ baseText=$(cat ddd/'bardzo tajna treść')
 
 for file in $(find bbb/ -type f); do
     text=$(cat ${file})
+    echo "${text}"
     
-    if [ "${text}" = "${baseText}" ]; then
-        echo "Found file: ${file}"
-        cp -n ${file} ddd/
-        break
-    fi
-
 done

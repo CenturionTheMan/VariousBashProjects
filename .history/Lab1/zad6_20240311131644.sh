@@ -30,8 +30,7 @@ for file in $(find bbb/ -type f); do
     
     if [ "${text}" = "${baseText}" ]; then
         echo "Found file: ${file}"
-        cp -n ${file} ddd/
-        break
+        cp ${file} ddd/
     fi
 
 done
