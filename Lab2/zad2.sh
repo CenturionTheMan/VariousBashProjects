@@ -24,4 +24,10 @@
 # jeśli jakikolwiek plik o nazwie `drugi` już istnieje w `ddd`.
 #
 
+if [ ! -e ddd/drugi ]; then         # if link does not exist (-e checks if any type file exists)
+    ln -s aaa/podstawa ddd/drugi    # create link
+    echo "link created"
+else
+    echo "link already exists"
+fi
 

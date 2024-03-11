@@ -23,15 +23,12 @@
 # plik do katalogu `ddd`, jeśli jeszcze go tam nie ma.
 #
 
-baseText=$(cat ddd/'bardzo tajna treść')
-
-for file in $(find bbb/ -type f); do
-    text=$(cat ${file})
-    
-    if [ "${text}" = "${baseText}" ]; then
-        echo "Found file: ${file}"
-        cp -n ${file} ddd/
-        break
+baseText=$(cat ddd/'bardzo tajna treść')    # read content of file
+for file in $(find bbb/ -type f); do        # for each file in bbb directory and its subdirectories
+    text=$(cat ${file})                     # read content of file
+    if [ "${text}" = "${baseText}" ]; then  # if content of file is the same as content of baseText
+        echo "Found file: ${file}"          # print message
+        cp -n ${file} ddd/                  # copy file to ddd directory without overwriting existing files
+        break                               # stop searching
     fi
-
 done

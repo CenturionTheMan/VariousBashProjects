@@ -25,3 +25,11 @@
 #
 
 
+for filePath in ccc/*; do                   # for each file in ccc
+    if [ -L "${filePath}" ]; then           # if file is a symbolic link
+        linkPath=$(readlink -f ${filePath}) # get the path the link points to
+        if [ ! -e "${linkPath}" ]; then     # if the file the link points to does not exist
+            echo "${linkPath}"              # print the path
+        fi        
+    fi
+done

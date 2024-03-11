@@ -24,8 +24,6 @@
 # Kolejność łączenia plików nie ma znaczenia.
 #
 
-touch ddd/całość
-text=$(cat ddd/*)
-echo "${text}" >> ddd/całość
+cat aaa/* > ddd/całość # concatenate all files from aaa directory and write to całość file (will create one if it does not exist)
 
 

@@ -23,14 +23,10 @@
 # to odpowiedni plik stworzyć lub nadpisać istniejący.
 #
 
-
-
-if ! [ -f ddd/drugi ]; then
-    touch ddd/drugi
-    echo "Ala ma kota." >> ddd/drugi
-else 
-    text=$(cat ddd/drugi)
-    if ! [ text = "Ala ma kota." ]; then
-        echo "Ala ma kota." >> ddd/drugi
-    fi
+if ! [ -f ddd/drugi ]; then                             # if file does not exist
+    echo "Ala ma kota." > ddd/drugi                     # write content to file (will create one if it does not exist)
+elif ! [ "$(cat ddd/drugi)" = "Ala ma kota." ]; then    # if file exists and contains incorrect content
+    echo "Ala ma kota." > ddd/drugi                     # write correct content to file
+else                                                    # if file exists and contains correct content
+    echo "File exists and contains correct content"     # print message
 fi

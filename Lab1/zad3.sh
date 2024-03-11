@@ -23,4 +23,4 @@
 #
 
 
-cp -n aaa/* ddd/
+cp -n aaa/* ddd/ # copy all files from aaa to ddd, do not overwrite existing files

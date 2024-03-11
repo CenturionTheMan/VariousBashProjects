@@ -26,8 +26,10 @@
 # kopiowania nie nadpiszemy żadnych istniejących w nim plików!
 #
 
-if ! [ -d ddd/głęboki ]; then
-    mkdir ddd/głęboki
+if ! [ -d ddd/głęboki ]; then                       # if directory does not exist
+    mkdir ddd/głęboki                               # create directory
 fi
-find bbb/ -type f -exec cp -n {} ddd/głęboki/ \;
+for file in $(find bbb -type f); do                  # for each file in bbb directory and its subdirectories
+    cp -n "${file}" ddd/głęboki                      # copy file to głęboki directory without overwriting existing files
+done
 

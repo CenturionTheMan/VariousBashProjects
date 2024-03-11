@@ -24,4 +24,11 @@
 # dodatkowych plików/dowiązań wewnętrznych.
 #
 
-
+for dirPath in $(find -type d); do                      # for each directory in current directory
+    if [ ! -e "ddd/$(basename ${dirPath})" ]; then      # if link does not exist (-e checks if any type file exists)
+        ln -s "${dirPath}" "ddd/$(basename ${dirPath})" # create link
+        echo "$(basename ${dirPath}) - link created"
+    else
+        echo "$(basename ${dirPath}) - link already exists"
+    fi
+done

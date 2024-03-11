@@ -24,4 +24,15 @@
 # upewnić się, że nie zmienimy żadnych istniejących plików w `ddd`.
 #
 
+for filePath in aaa/*; do                                   # for each file in aaa
+    if [ -x "${filePath}" ]; then                           # if file is executable
+        if [ ! -e "ddd/$(basename ${filePath})" ]; then     # if link does not exist (-e checks if any type file exists)
+            ln "${filePath}" "ddd/$(basename ${filePath})"  # create link
+            echo "$(basename ${filePath}) - link created"
+        else
+            echo "$(basename ${filePath}) - link already exists"
+        fi
+    fi
+done
+
 
