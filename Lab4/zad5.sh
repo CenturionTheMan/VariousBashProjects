@@ -23,3 +23,12 @@
 # (* – wyszukać wszystkie linie, rozpoczynające się od słowa 'syslog')
 #
 
+
+# 1. cat - Rread text from file
+# 2. grep - Search file for lines that begins with 'syslog'
+# 3. tr - Replace multiple spaces with one space (-s flag)
+# 4. cut - Cut the second field from the line
+# 5. cut - Cut the first field from the line
+# 6. sort - Sort lines
+# 7. uniq - Remove duplicates
+cat dodatkowe/etc-services | grep -e 'syslog*' | tr -s ' ' | cut -d ' ' -f 2 | cut -d '/' -f 1 | sort | uniq

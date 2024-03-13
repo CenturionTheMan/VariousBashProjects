@@ -25,3 +25,9 @@
 # Wyświetlić same nazwy, bez powtórzeń.
 #
 
+# 1. cat - get text from file
+# 2. tail -n +2 - get text from second line to end
+# 3. cut -d ' ' -f 1 - split text by space and get first part
+# 4. sort - sort lines
+# 5. uniq - get unique lines
+cat dodatkowe/ps-aux | tail -n +2 | cut -d ' ' -f 1 | sort | uniq

@@ -24,3 +24,6 @@
 # Wyświetlić wyłącznie odszyfrowaną treść, nic poza tym.
 #
 
+# 1. cat - get text from file
+# 2. tr - translate characters from one set to another
+cat dodatkowe/cezar | tr '[a-z]' '[x-za-w]'

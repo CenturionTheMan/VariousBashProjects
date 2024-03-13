@@ -23,3 +23,8 @@
 # / wartość w każdym wierszu). Każdą nazwę użytkownika wypisać w osobnej linii.
 #
 
+
+# 1. cat - get text from file
+# 2/3. grep --invert-match - select non-matching lines
+# 4. cut -d ':' -f 1 - split text by ':' and get first part
+cat dodatkowe/etc-passwd | grep --invert-match '/bin/nologin' | grep --invert '/bin/false' | cut -d ':' -f 1

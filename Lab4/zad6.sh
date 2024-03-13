@@ -24,3 +24,9 @@
 # (* – chodzi o wpisy, zawierające adres 0.0.0.0 w kolumnie 5).
 #
 
+cat dodatkowe/ss-tulpn  | # Read text from file
+    tr -s ' '           | # Replace multiple spaces with one space (-s flag)
+    cut -d ' ' -f 5     | # Cut the fifth field from the line 
+    grep '0.0.0.0'      | # Search file for lines that contains '0.0.0.0'
+    cut -d ':' -f 2     | # Cut the second field from the line
+    sort | uniq           # Sort lines and remove duplicates
