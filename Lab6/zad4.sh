@@ -22,3 +22,14 @@
 # Wynik wyświetlić jako ułamek w postaci X/Y.
 #
 
+
+cat dodatkowe/slajdy.tex | awk 'BEGIN { 
+        all=0; 
+        notEmpty=0; 
+    } { 
+        all++; 
+        if ($0 !~ /^ *$/)
+            notEmpty++ 
+    } END { 
+        print notEmpty "/" all 
+    }'

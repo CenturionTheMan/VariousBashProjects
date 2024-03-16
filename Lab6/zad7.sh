@@ -23,3 +23,11 @@
 # także wyodrębnić.
 #
 
+cat dodatkowe/kant.txt |
+    grep -E -o '(\+?[0-9]{2,4}[ -]?)?[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{3}' |
+    sort -u
+
+cat dodatkowe/kant.txt |
+    grep -E -o '[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+' |
+    sort -u
+

@@ -26,3 +26,11 @@
 # Jako wynik zwrócić same unikalne ścieżki, każdą w nowej linii.
 #
 
+cat dodatkowe/slajdy.tex | 
+    grep -E '\\fbox{\\includegraphics' |    # find all lines with \fbox{\includegraphics 
+    awk '{
+            gsub(/.*\{/, "");               # remove everything before {
+            gsub(/\}.*/, "");               # remove everything after }
+            print $0;                       # print whole line
+        }' | 
+    sort -u

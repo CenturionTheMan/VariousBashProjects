@@ -26,4 +26,4 @@
 # (źródło: https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt).
 #
 
-cat dodatkowe/tadeusz.txt | awk 'NR%3==2'
+cat dodatkowe/tadeusz.txt | awk 'NR%3==2' # print every 3rd line starting from 2nd line

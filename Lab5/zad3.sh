@@ -30,12 +30,12 @@
 
 cat dodatkowe/cities.csv |
     awk -F ',' '{
-        if(NR == 1)
+        if(NR == 1)             # if it is first line
         {
-            desired = NF;
+            desired = NF;       # set desired number of fields
         }
-        else if(desired != NF)
+        else if(desired != NF)  # if desired number of fields is different than actual number of fields
         {
-            print NR
+            print NR            # print line number
         }
     }'

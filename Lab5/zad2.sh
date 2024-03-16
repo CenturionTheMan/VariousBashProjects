@@ -26,6 +26,6 @@
 #
 
 cat dodatkowe/etc-passwd | 
-    awk -F ':' '$3 >= 1000 && $7 == "/bin/bash" {
-        print $1
+    awk -F ':' '$3 >= 1000 && $7 == "/bin/bash" {   # if 3rd field is greater or equal to 1000 and 7th field is /bin/bash
+        print $1                                    # print 1st field
     }'

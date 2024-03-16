@@ -22,3 +22,13 @@
 # pomijajac linie puste i takie, których jedyną zawartość stanowią spacje.
 #
 
+# Take text from file
+# remove xml tags
+# if not empty line -> print it
+cat dodatkowe/cpplint.txt | awk '{
+        rowText = $0
+        gsub(/<[^>]*>/, "", rowText)
+        if(rowText !~ /^ *$/)
+            print rowText
+    }'
+

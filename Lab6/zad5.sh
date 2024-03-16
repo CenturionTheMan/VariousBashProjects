@@ -24,3 +24,13 @@
 # Zwrócić same unikalne nazwy, bez nawiasów, każdą nazwę w nowej linii.
 #
 
+
+# ! wrong sort order
+cat dodatkowe/service.py | 
+    grep -E 'def[ ]+[a-z_]*[ ]*' |  # find all lines with 'def <name>'
+    awk '{
+            gsub(/^[ ]*def[ ]*/,"") # remove 'def' and spaces
+            gsub(/\(.*(,|\):)/, "") # remove function params
+            print $0;
+        }'  | 
+    sort -u
