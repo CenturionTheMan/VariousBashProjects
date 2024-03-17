@@ -25,4 +25,5 @@
 # `aaa`, `bbb` i wszelkie potrzebne ich podkatalogi.
 #
 
-
+mkdir -p ddd/zapasy                 # create directory for backup (-p to avoid error if directory already exists)
+cp -R --parents $(find aaa bbb -type f ! -writable) ddd/zapasy # copy files from aaa and bbb to ddd/zapasy (! -writable to find files that are not writable)

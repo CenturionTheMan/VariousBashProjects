@@ -27,4 +27,12 @@
 # że na pewno możemy je przeczytać).
 #
 
+#???? nie rozumiem 
 
+if [ -f ddd/zasoby/tajne_hasla ]; then
+    rm ddd/zasoby/tajne_hasla
+fi
+for file in $(find ccc/ -type f -readable); do
+    text="[${file}] $(cat $file)"
+    echo $text >> ddd/zasoby/tajne_hasla
+done

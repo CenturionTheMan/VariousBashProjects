@@ -25,3 +25,8 @@
 #
 
 
+files=$(find bbb -type f -executable) 
+echo "Uważaj na te pliki:" > ddd/ostrzeżenie
+for file in "${files}"; do
+    echo "${file}" >> ddd/ostrzeżenie
+done
